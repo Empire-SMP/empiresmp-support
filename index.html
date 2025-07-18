@@ -1,355 +1,56 @@
-<style>
-  /* Reset & Base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #1a1a1a;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  a {
-    color: #0078d7;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  a:hover, a:focus {
-    color: #005ea2;
-    outline: none;
-  }
-
-  /* Container */
-  .container {
-    max-width: 920px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
-  }
-
-  /* Header */
-  header {
-    background: #004aad;
-    padding: 18px 20px;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-  header nav {
-    display: flex;
-    justify-content: center;
-    gap: 38px;
-    font-weight: 600;
-    font-size: 1.15rem;
-  }
-  header nav a {
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 8px;
-    user-select: none;
-    transition: background-color 0.3s ease;
-  }
-  header nav a:hover,
-  header nav a:focus {
-    background-color: rgba(255 255 255 / 0.2);
-    outline: none;
-  }
-  header nav a.support-link {
-    background: #ff8c00;
-    box-shadow: 0 4px 12px rgba(255,140,0,0.7);
-    font-weight: 700;
-    color: #fff;
-  }
-  header nav a.support-link:hover {
-    background-color: #e07b00;
-    box-shadow: 0 6px 18px rgba(224,123,0,0.85);
-  }
-
-  /* Hero */
-  .hero {
-    text-align: center;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    animation: fadeInUp 1s ease forwards;
-    opacity: 0;
-  }
-  .hero h1 {
-    font-size: 3.6rem;
-    color: #004aad;
-    margin-bottom: 18px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .hero p {
-    font-size: 1.3rem;
-    color: #444;
-    margin-bottom: 35px;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-  }
-  .hero .btn {
-    background: #ff8c00;
-    color: white;
-    border: none;
-    padding: 20px 54px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border-radius: 36px;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.75);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  .hero .btn:hover,
-  .hero .btn:focus {
-    background: #e07b00;
-    box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
-    outline: none;
-  }
-
-  /* FAQ */
-  .faq {
-    max-width: 720px;
-    margin: 0 auto 80px;
-    animation: fadeInUp 1.2s ease forwards;
-    opacity: 0;
-  }
-  .faq-item + .faq-item {
-    margin-top: 14px;
-  }
-  .faq-question {
-    background: #dbe8ff;
-    border-radius: 14px;
-    padding: 20px 28px;
-    font-weight: 600;
-    color: #004aad;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    transition: background-color 0.3s ease;
-  }
-  .faq-question:hover,
-  .faq-question:focus {
-    background: #c0d8ff;
-    outline: none;
-  }
-  .faq-question::after {
-    content: '▼';
-    font-size: 15px;
-    position: absolute;
-    right: 28px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-  }
-  .faq-question.active::after {
-    transform: translateY(-50%) rotate(180deg);
-  }
-  .faq-answer {
-    display: none;
-    padding: 22px 28px;
-    background: #fff;
-    border-radius: 0 0 14px 14px;
-    box-shadow: 0 1px 8px rgb(0 0 0 / 0.07);
-    color: #333;
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
-  .faq-answer.show {
-    display: block;
-  }
-
-  /* Benefits */
-  .benefits {
-    text-align: center;
-    margin-bottom: 100px;
-    animation: fadeInUp 1.4s ease forwards;
-    opacity: 0;
-  }
-  .benefits h2 {
-    font-size: 2.7rem;
-    color: #004aad;
-    margin-bottom: 32px;
-    font-weight: 700;
-  }
-  .benefits ul {
-    list-style: none;
-    padding: 0;
-    display: inline-flex;
-    gap: 48px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .benefits ul li {
-    background: #ff8c00;
-    color: white;
-    font-weight: 700;
-    padding: 20px 36px;
-    border-radius: 48px;
-    box-shadow: 0 8px 22px rgba(255,140,0,0.5);
-    transition: background-color 0.3s ease;
-    min-width: 190px;
-  }
-  .benefits ul li:hover {
-    background: #e07b00;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    background: #111;
-    color: #bbb;
-    font-size: 0.9rem;
-    font-weight: 400;
-    user-select: none;
-    letter-spacing: 0.02em;
-  }
-
-  /* Floating Discord Button */
-  .discord-btn {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    background: #5865F2;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    box-shadow: 0 6px 18px rgba(88,101,242,0.7);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease;
-    z-index: 9999;
-  }
-  .discord-btn:hover,
-  .discord-btn:focus {
-    box-shadow: 0 8px 26px rgba(88,101,242,0.9);
-    outline: none;
-  }
-  .discord-btn svg {
-    width: 28px;
-    height: 28px;
-    fill: white;
-  }
-
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EmpireSMP Support - Home</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 20px;
+      background: #f5f7fa;
+      color: #1a1a1a;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    header {
+      background-color: #004aad;
+      padding: 15px;
+      text-align: center;
     }
-  }
-
-  /* Responsive */
-  @media(max-width: 720px) {
-    .hero h1 {
-      font-size: 2.7rem;
+    header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
     }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 90%;
+    header a:hover {
+      text-decoration: underline;
     }
-    .benefits ul {
-      flex-direction: column;
-      gap: 22px;
-      max-width: 280px;
-      margin: 0 auto;
+    main {
+      max-width: 720px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
     }
-    header nav {
-      gap: 20px;
-      font-size: 1rem;
+    h1 {
+      color: #004aad;
     }
-  }
-</style>
-
-<header>
-  <nav>
-    <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server">Discord</a>
-    <a href="http://empiresmpwiki.wikidot.com/start" target="_blank" rel="noopener noreferrer" aria-label="Learn about EmpireSMP">About Us</a>
-    <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Get Support">Support</a>
-  </nav>
-</header>
-
-<div class="container" role="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <h1 id="hero-title">Need Help? Our Support Team Has Your Back 24/7</h1>
-    <p>EmpireSMP is committed to providing timely, helpful, and friendly assistance whenever you need it. Whether you’re stuck with a technical issue, have billing questions, or just need guidance, our support team is available around the clock. Reach out to us anytime — your satisfaction is our priority.</p>
-    <button class="btn" aria-label="Visit Support Page" onclick="window.open('https://sites.google.com/view/empiresmplive/home?authuser=0', '_blank')">Visit Support Page</button>
-  </section>
-
-  <section class="faq" aria-label="Frequently Asked Questions">
-    <div class="faq-item">
-      <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer1">❓ Didn’t receive your rank?</div>
-      <div id="answer1" class="faq-answer" role="region" aria-hidden="true">
-        Occasionally, rank delivery can take a few minutes due to server processing times. Please wait up to 15 minutes after purchase. If you still haven’t received it, open a support ticket via our Discord server for prompt assistance.
-      </div>
-    </div>
-    <div class="faq-item">
-      <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer2">💳 What payment methods do you accept?</div>
-      <div id="answer2" class="faq-answer" role="region" aria-hidden="true">
-        We offer a variety of secure payment options including PayPal, all major debit and credit cards, Apple Pay, Google Pay, and more. Your transaction security and convenience are our priorities.
-      </div>
-    </div>
-    <div class="faq-item">
-      <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer3">🔄 Can I request a refund?</div>
-      <div id="answer3" class="faq-answer" role="region" aria-hidden="true">
-        Refund requests are evaluated individually. Please submit a support ticket with detailed information on your issue via our Discord, and our team will respond swiftly to help.
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits" aria-label="Reasons to choose EmpireSMP Support">
-    <h2>Why EmpireSMP Support?</h2>
-    <ul>
-      <li>⚡ <strong>Rapid Response</strong><br>We prioritize your issues and answer quickly.</li>
-      <li>🔒 <strong>Secure & Trusted</strong><br>Safe transactions and privacy guaranteed.</li>
-      <li>🌍 <strong>Global 24/7 Support</strong><br>Help whenever and wherever you need it.</li>
-      <li>🤝 <strong>Community Driven</strong><br>Your feedback helps us improve constantly.</li>
-    </ul>
-  </section>
-</div>
-
-<footer>
-  <p>© 2025 EmpireSMP Support. All rights reserved.</p>
-</footer>
-
-<!-- Floating Discord Button -->
-<a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" class="discord-btn">
-  <svg viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path d="M104.4 105.7c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.3-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.3 5-10.3 11.1s4.6 11.1 10.3 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1z"/>
-    <path d="M189.5 20H55.3C40.3 20 27.3 32.9 27.3 47.9v144.2c0 15 12.9 27.9 28 27.9h101.8l-4.8-16.7 11.5 10.7 10.9 9.6 19.4 16.7V47.9c0-15-12.9-27.9-28-27.9zM163 170.1s-5.4-6.5-9.8-12.3c19.4-5.5 26.8-17.6 26.8-17.6-6.1 4-11.9 6.8-17.1 8.8-7.5 3.1-14.7 5.3-21.7 6.5-14.3 2.8-27.3 1.9-38.1-.1-8.4-1.6-15.5-4-21.3-6.5-2.3-1-4.8-2.3-7.4-4-0.3-0.2-0.6-0.3-0.9-0.5-0.2-0.1-0.3-0.2-0.4-0.3-0.1-0.1-0.2-0.1-0.2-0.1-0.1 0-0.1-0.1-0.2-0.1-0.2-0.1-0.3-0.2-0.4-0.3-2.6-1.8-4.7-4-6.6-6.2-0.1-0.1-0.1-0.2-0.2-0.3-0.1-0.1-0.1-0.1-0.1-0.1-1.1-1.5-1.8-2.8-2.5-4.1-0.1-0.2-0.1-0.2-0.2-0.3 0 0-0.1-0.2-0.1-0.3-0.2-0.6-0.3-1.1-0.4-1.7 0-0.1-0.1-0.2-0.1-0.3 0-0.1 0-0.1 0-0.2v-39.8l13.6 12.6-8 11.9 26.1 24.1 46.4-26.5 10.2 15.7z"/>
-  </svg>
-</a>
-
-<script>
-  // FAQ accordion toggle with keyboard accessibility
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', toggleFAQ);
-    question.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFAQ.call(question);
-      }
-    });
-  });
-
-  function toggleFAQ() {
-    const answer = this.nextElementSibling;
-    const isVisible = answer.classList.contains('show');
-    
-    answer.classList.toggle('show');
-    this.classList.toggle('active');
-    this.setAttribute('aria-expanded', !isVisible);
-    answer.setAttribute('aria-hidden', isVisible);
-  }
-</script>
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="page1.html">Page 1</a>
+      <a href="page2.html">Page 2</a>
+      <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer">Discord</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome to EmpireSMP Support</h1>
+    <p>Your one-stop place for all EmpireSMP support needs. Browse through our pages for guides, FAQs, and helpful resources.</p>
+    <p>Need help? Join our Discord server or visit our support page.</p>
+  </main>
+</body>
+</html>
