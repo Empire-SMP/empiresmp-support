@@ -2,26 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EmpireSMP - Page 1</title>
-  <!-- Same CSS or styles as index.html -->
+  <!-- (Same CSS as index.html for brevity, add the full style here as above) -->
+  <style>
+    /* Paste the exact same CSS here as in index.html */
+    /* ... */
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <a href="index.html">Home</a>
-      <a href="page1.html">Page 1</a>
+      <a href="page1.html" aria-current="page">Page 1</a>
       <a href="page2.html">Page 2</a>
-      <a href="page3.html">Page 3</a>
+      <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link">Support</a>
     </nav>
   </header>
 
-  <main>
-    <h1>This is Page 1</h1>
-    <p>Content for page 1 goes here.</p>
-  </main>
+  <div class="container" role="main">
+    <section class="hero" aria-labelledby="page1-title">
+      <h1 id="page1-title">Welcome to Page 1</h1>
+      <p>This is some example content for Page 1. You can customize this section with whatever you want.</p>
+      <button class="btn" onclick="alert('Button on Page 1 clicked!')">Click Me</button>
+    </section>
+
+    <section class="benefits" aria-labelledby="benefits-title">
+      <h2 id="benefits-title">Page 1 Benefits</h2>
+      <ul>
+        <li>Benefit One</li>
+        <li>Benefit Two</li>
+        <li>Benefit Three</li>
+        <li>Benefit Four</li>
+      </ul>
+    </section>
+  </div>
 
   <footer>
-    <p>© 2025 EmpireSMP</p>
+    &copy; 2025 EmpireSMP. All rights reserved.
   </footer>
+
+  <a href="https://discord.gg/yourdiscordinvite" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server">
+    <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
+    </svg>
+  </a>
 </body>
 </html>
