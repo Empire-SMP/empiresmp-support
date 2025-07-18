@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EmpireSMP - Home</title>
   <style>
-    /* Your full style copied exactly from your message */
     /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -28,13 +27,11 @@
       color: #005ea2;
       outline: none;
     }
-    /* Container */
     .container {
       max-width: 920px;
       margin: 0 auto;
       padding: 40px 20px 80px;
     }
-    /* Header */
     header {
       background: #004aad;
       padding: 18px 20px;
@@ -72,7 +69,6 @@
       background-color: #e07b00;
       box-shadow: 0 6px 18px rgba(224,123,0,0.85);
     }
-    /* Hero */
     .hero {
       text-align: center;
       margin-top: 70px;
@@ -114,58 +110,6 @@
       box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
       outline: none;
     }
-    /* FAQ */
-    .faq {
-      max-width: 720px;
-      margin: 0 auto 80px;
-      animation: fadeInUp 1.2s ease forwards;
-      opacity: 0;
-    }
-    .faq-item + .faq-item {
-      margin-top: 14px;
-    }
-    .faq-question {
-      background: #dbe8ff;
-      border-radius: 14px;
-      padding: 20px 28px;
-      font-weight: 600;
-      color: #004aad;
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-      transition: background-color 0.3s ease;
-    }
-    .faq-question:hover,
-    .faq-question:focus {
-      background: #c0d8ff;
-      outline: none;
-    }
-    .faq-question::after {
-      content: '▼';
-      font-size: 15px;
-      position: absolute;
-      right: 28px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: transform 0.3s ease;
-    }
-    .faq-question.active::after {
-      transform: translateY(-50%) rotate(180deg);
-    }
-    .faq-answer {
-      display: none;
-      padding: 22px 28px;
-      background: #fff;
-      border-radius: 0 0 14px 14px;
-      box-shadow: 0 1px 8px rgb(0 0 0 / 0.07);
-      color: #333;
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-    .faq-answer.show {
-      display: block;
-    }
-    /* Benefits */
     .benefits {
       text-align: center;
       margin-bottom: 100px;
@@ -199,7 +143,6 @@
     .benefits ul li:hover {
       background: #e07b00;
     }
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -210,7 +153,6 @@
       user-select: none;
       letter-spacing: 0.02em;
     }
-    /* Floating Discord Button */
     .discord-btn {
       position: fixed;
       bottom: 32px;
@@ -237,7 +179,6 @@
       height: 28px;
       fill: white;
     }
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -248,7 +189,6 @@
         transform: translateY(0);
       }
     }
-    /* Responsive */
     @media(max-width: 720px) {
       .hero h1 {
         font-size: 2.7rem;
@@ -276,57 +216,24 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="page1.html">Page 1</a>
       <a href="page2.html">Page 2</a>
-      <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Get Support">Support</a>
+      <a href="https://empiresmpstore.craftingstore.net/" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Visit our Webstore">Webstore</a>
     </nav>
   </header>
 
   <div class="container" role="main">
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Need Help? Our Support Team Has Your Back 24/7</h1>
-      <p>EmpireSMP is committed to providing timely, helpful, and friendly assistance whenever you need it. Whether you’re stuck with a technical issue, have billing questions, or just need guidance, our support team is available around the clock. Reach out to us anytime — your satisfaction is our priority.</p>
-      <button class="btn" aria-label="Visit Support Page" onclick="window.open('https://sites.google.com/view/empiresmplive/home?authuser=0', '_blank')">Visit Support Page</button>
-    </section>
-
-    <section class="faq" aria-label="Frequently Asked Questions">
-      <div class="faq-item">
-        <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer1">❓ Didn’t receive your rank?</div>
-        <div id="answer1" class="faq-answer" role="region" aria-live="polite">
-          If your rank hasn’t appeared within 24 hours, please contact us via Discord or email your username and proof of purchase. We’ll resolve it quickly.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer2">❓ Support response times?</div>
-        <div id="answer2" class="faq-answer" role="region" aria-live="polite">
-          Our team aims to reply within 12 hours during weekdays. Weekends might be a bit slower but we strive for promptness.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer3">❓ Payment issues?</div>
-        <div id="answer3" class="faq-answer" role="region" aria-live="polite">
-          For any payment or billing concerns, please email support@empiresmp.com or message us on Discord.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer4">❓ Cancel subscription?</div>
-        <div id="answer4" class="faq-answer" role="region" aria-live="polite">
-          You can cancel anytime by visiting your account settings on our website or contacting support.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div tabindex="0" class="faq-question" role="button" aria-expanded="false" aria-controls="answer5">❓ Refund policy?</div>
-        <div id="answer5" class="faq-answer" role="region" aria-live="polite">
-          Refunds are issued based on our terms of service. Please check our refund policy page or contact support for details.
-        </div>
-      </div>
+      <h1 id="hero-title">Welcome to EmpireSMP</h1>
+      <p>EmpireSMP is your go-to Minecraft SMP community with awesome features, friendly players, and continuous updates.</p>
+      <button class="btn" onclick="alert('Welcome to EmpireSMP!')">Get Started</button>
     </section>
 
     <section class="benefits" aria-labelledby="benefits-title">
-      <h2 id="benefits-title">Why choose EmpireSMP Support?</h2>
+      <h2 id="benefits-title">Why Join EmpireSMP?</h2>
       <ul>
-        <li>Fast Responses</li>
-        <li>24/7 Availability</li>
-        <li>Friendly Staff</li>
-        <li>Clear Communication</li>
+        <li>Active Community</li>
+        <li>Unique Custom Plugins</li>
+        <li>Regular Events</li>
+        <li>Exclusive Webstore Items</li>
       </ul>
     </section>
   </div>
@@ -335,35 +242,10 @@
     &copy; 2025 EmpireSMP. All rights reserved.
   </footer>
 
-  <a href="https://discord.gg/yourdiscordinvite" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
+  <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
     <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
       <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
     </svg>
   </a>
-
-  <script>
-    // FAQ toggle script
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const isActive = q.classList.contains('active');
-        document.querySelectorAll('.faq-question').forEach(el => {
-          el.classList.remove('active');
-          el.setAttribute('aria-expanded', 'false');
-          document.getElementById(el.getAttribute('aria-controls')).classList.remove('show');
-        });
-        if (!isActive) {
-          q.classList.add('active');
-          q.setAttribute('aria-expanded', 'true');
-          document.getElementById(q.getAttribute('aria-controls')).classList.add('show');
-        }
-      });
-      q.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          q.click();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
