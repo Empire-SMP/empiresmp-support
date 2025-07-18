@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EmpireSMP - Page 1</title>
+  <title>EmpireSMP Support & Store</title>
   <style>
-    /* Same CSS as index.html (repeat exactly) */
     /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
@@ -28,11 +27,15 @@
       color: #005ea2;
       outline: none;
     }
+
+    /* Container */
     .container {
       max-width: 920px;
       margin: 0 auto;
       padding: 40px 20px 80px;
     }
+
+    /* Header */
     header {
       background: #004aad;
       padding: 18px 20px;
@@ -70,6 +73,8 @@
       background-color: #e07b00;
       box-shadow: 0 6px 18px rgba(224,123,0,0.85);
     }
+
+    /* Hero */
     .hero {
       text-align: center;
       margin-top: 70px;
@@ -111,39 +116,67 @@
       box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
       outline: none;
     }
-    .benefits {
-      text-align: center;
-      margin-bottom: 100px;
-      animation: fadeInUp 1.4s ease forwards;
+
+    /* Webstore Section */
+    .webstore {
+      max-width: 720px;
+      margin: 0 auto 80px;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+      animation: fadeInUp 1.2s ease forwards;
       opacity: 0;
+      color: #222;
+      line-height: 1.55;
     }
-    .benefits h2 {
-      font-size: 2.7rem;
+    .webstore h2 {
+      font-size: 2.8rem;
       color: #004aad;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
       font-weight: 700;
+      text-align: center;
     }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-      display: inline-flex;
-      gap: 48px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .webstore p {
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .benefits ul li {
+    .webstore ul {
+      list-style: disc inside;
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .webstore ul li {
+      margin-bottom: 12px;
+    }
+    .webstore .btn {
+      display: block;
       background: #ff8c00;
       color: white;
+      text-align: center;
+      padding: 16px 50px;
+      font-size: 1.25rem;
       font-weight: 700;
-      padding: 20px 36px;
-      border-radius: 48px;
-      box-shadow: 0 8px 22px rgba(255,140,0,0.5);
-      transition: background-color 0.3s ease;
-      min-width: 190px;
+      border-radius: 36px;
+      box-shadow: 0 6px 20px rgba(255,140,0,0.75);
+      text-decoration: none;
+      margin: 0 auto;
+      width: fit-content;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .benefits ul li:hover {
+    .webstore .btn:hover,
+    .webstore .btn:focus {
       background: #e07b00;
+      box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
+      outline: none;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -154,6 +187,8 @@
       user-select: none;
       letter-spacing: 0.02em;
     }
+
+    /* Floating Discord Button */
     .discord-btn {
       position: fixed;
       bottom: 32px;
@@ -180,6 +215,8 @@
       height: 28px;
       fill: white;
     }
+
+    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -190,6 +227,8 @@
         transform: translateY(0);
       }
     }
+
+    /* Responsive */
     @media(max-width: 720px) {
       .hero h1 {
         font-size: 2.7rem;
@@ -198,11 +237,8 @@
         font-size: 1.1rem;
         max-width: 90%;
       }
-      .benefits ul {
-        flex-direction: column;
-        gap: 22px;
-        max-width: 280px;
-        margin: 0 auto;
+      .webstore {
+        padding: 20px 20px;
       }
       header nav {
         gap: 20px;
@@ -212,41 +248,50 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="page1.html" aria-current="page">Page 1</a>
-      <a href="page2.html">Page 2</a>
-      <a href="https://empiresmpstore.craftingstore.net/" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Visit our Webstore">Webstore</a>
-    </nav>
-  </header>
 
-  <div class="container" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Discover EmpireSMP</h1>
-      <p>Explore our community's unique gameplay mechanics, custom builds, and upcoming updates. Dive deeper and enjoy an unparalleled SMP experience.</p>
-      <button class="btn" onclick="alert('Enjoy exploring EmpireSMP!')">Explore</button>
-    </section>
+<header>
+  <nav>
+    <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server">Discord</a>
+    <a href="http://empiresmpwiki.wikidot.com/start" target="_blank" rel="noopener noreferrer" aria-label="Learn about EmpireSMP">About Us</a>
+    <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Get Support">Support</a>
+  </nav>
+</header>
 
-    <section class="benefits" aria-labelledby="benefits-title">
-      <h2 id="benefits-title">Features & Highlights</h2>
-      <ul>
-        <li>Custom Plugins</li>
-        <li>Player-run Economy</li>
-        <li>Exclusive Events</li>
-        <li>Marketplace & Trading</li>
-      </ul>
-    </section>
-  </div>
+<div class="container" role="main">
 
-  <footer>
-    &copy; 2025 EmpireSMP. All rights reserved.
-  </footer>
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">EmpireSMP Official Webstore</h1>
+    <p>Welcome to the EmpireSMP Webstore! Here you’ll find exclusive in-game items, ranks, cosmetics, and more to enhance your experience on the server. Our store is secure, user-friendly, and designed to provide you with fast and reliable access to all the goodies you want.</p>
+    <button class="btn" aria-label="Visit Webstore" onclick="window.open('https://empiresmpstore.craftingstore.net/', '_blank')">Visit Store Now</button>
+  </section>
 
-  <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
-    <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
-    </svg>
-  </a>
+  <section class="webstore" aria-labelledby="webstore-info-title">
+    <h2 id="webstore-info-title">Why Shop at EmpireSMP Webstore?</h2>
+    <p>Our webstore offers a wide range of products and benefits that make your EmpireSMP journey even better:</p>
+    <ul>
+      <li><strong>Exclusive Items & Ranks:</strong> Get unique in-game cosmetics and ranks only available through our store.</li>
+      <li><strong>Secure Payments:</strong> We support PayPal, credit/debit cards, Apple Pay, Google Pay, and more, ensuring your transactions are safe.</li>
+      <li><strong>Instant Delivery:</strong> Most purchases are delivered instantly or within a few minutes, so you can enjoy your items right away.</li>
+      <li><strong>Special Discounts & Events:</strong> Stay tuned for seasonal sales, bundle offers, and special events only for store customers.</li>
+      <li><strong>Customer Support:</strong> Our dedicated team is available 24/7 to help with any questions or issues related to your purchase.</li>
+      <li><strong>Community Driven:</strong> Your feedback helps us improve the store and add new items regularly.</li>
+    </ul>
+    <p>We take pride in providing a smooth and trustworthy shopping experience. Join thousands of satisfied players who shop at EmpireSMP Webstore and take their gameplay to the next level!</p>
+    <a href="https://empiresmpstore.craftingstore.net/" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Go to EmpireSMP Webstore">Shop Now</a>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 EmpireSMP Support & Store. All rights reserved.</p>
+</footer>
+
+<!-- Floating Discord Button -->
+<a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" class="discord-btn">
+  <svg viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M104.4 105.1c-5.7 0-10.3 5-10.3 11.1 0 6.1 4.6 11.1 10.3 11.1 5.7 0 10.3-5 10.3-11.1 0-6.1-4.6-11.1-10.3-11.1zm36.2 0c-5.7 0-10.3 5-10.3 11.1 0 6.1 4.6 11.1 10.3 11.1 5.7 0 10.3-5 10.3-11.1 0-6.1-4.6-11.1-10.3-11.1zM188.3 20H56.7C35.3 20 18.7 38.7 18.7 62.6v114.8c0 23.8 16.6 42.6 38 42.6h104.6c21.4 0 38-18.8 38-42.6V62.6c0-23.9-16.6-42.6-38-42.6zm-25.6 139.2s-2.4-2.8-4.4-5.3c8.7-2.5 12-8 12-8-2.7 1.8-5.2 3-7.5 3.9-3.3 1.4-6.4 2.3-9.5 2.8-6.2 1.2-11.8.9-16.9-.1-3.7-.7-6.8-1.7-9.3-2.8-1.1-.5-2.5-1.1-4-1.9-0.2-0.1-.5-0.2-.7-0.3-0.2-0.1-.3-0.2-.4-0.3-1.8-0.8-2.8-1.3-2.8-1.3s3.1 5.3 11.1 7.9c-2 2.5-4.5 5.4-4.5 5.4-14.9-0.5-20.5-10.3-20.5-10.3 0-22 9.9-39.8 9.9-39.8 9.9-7.4 19.3-7.2 19.3-7.2l0.7 0.8c-12.4 3.5-18.1 8.7-18.1 8.7s1.5-0.8 4-2c7.2-3.5 12.9-4.4 15.3-4.7 0.4-0.1 0.8-0.1 1.3-0.2 4.9-0.7 10.5-0.3 16.7 0.1 3.2 0.2 6.6 0.8 10.2 2.1 0 0-5.5-5.2-17.1-8.7l1.1-1.2s9.4-0.2 19.3 7.2c0 0 9.9 17.7 9.9 39.7 0.1 0-5.6 9.8-20.4 10.3z"/>
+  </svg>
+</a>
+
 </body>
 </html>
