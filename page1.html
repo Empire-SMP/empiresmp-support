@@ -28,13 +28,11 @@
       color: #005ea2;
       outline: none;
     }
-    /* Container */
     .container {
       max-width: 920px;
       margin: 0 auto;
       padding: 40px 20px 80px;
     }
-    /* Header */
     header {
       background: #004aad;
       padding: 18px 20px;
@@ -72,7 +70,6 @@
       background-color: #e07b00;
       box-shadow: 0 6px 18px rgba(224,123,0,0.85);
     }
-    /* Hero */
     .hero {
       text-align: center;
       margin-top: 70px;
@@ -114,7 +111,6 @@
       box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
       outline: none;
     }
-    /* Benefits */
     .benefits {
       text-align: center;
       margin-bottom: 100px;
@@ -148,7 +144,6 @@
     .benefits ul li:hover {
       background: #e07b00;
     }
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -156,4 +151,102 @@
       color: #bbb;
       font-size: 0.9rem;
       font-weight: 400;
-     
+      user-select: none;
+      letter-spacing: 0.02em;
+    }
+    .discord-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #5865F2;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 6px 18px rgba(88,101,242,0.7);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: box-shadow 0.3s ease;
+      z-index: 9999;
+    }
+    .discord-btn:hover,
+    .discord-btn:focus {
+      box-shadow: 0 8px 26px rgba(88,101,242,0.9);
+      outline: none;
+    }
+    .discord-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media(max-width: 720px) {
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 90%;
+      }
+      .benefits ul {
+        flex-direction: column;
+        gap: 22px;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      header nav {
+        gap: 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="page1.html" aria-current="page">Page 1</a>
+      <a href="page2.html">Page 2</a>
+      <a href="https://empiresmpstore.craftingstore.net/" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Visit our Webstore">Webstore</a>
+    </nav>
+  </header>
+
+  <div class="container" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Discover EmpireSMP</h1>
+      <p>Explore our community's unique gameplay mechanics, custom builds, and upcoming updates. Dive deeper and enjoy an unparalleled SMP experience.</p>
+      <button class="btn" onclick="alert('Enjoy exploring EmpireSMP!')">Explore</button>
+    </section>
+
+    <section class="benefits" aria-labelledby="benefits-title">
+      <h2 id="benefits-title">Features & Highlights</h2>
+      <ul>
+        <li>Custom Plugins</li>
+        <li>Player-run Economy</li>
+        <li>Exclusive Events</li>
+        <li>Marketplace & Trading</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 EmpireSMP. All rights reserved.
+  </footer>
+
+  <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
+    <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
+    </svg>
+  </a>
+</body>
+</html>
