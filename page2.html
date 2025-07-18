@@ -28,13 +28,11 @@
       color: #005ea2;
       outline: none;
     }
-    /* Container */
     .container {
       max-width: 920px;
       margin: 0 auto;
       padding: 40px 20px 80px;
     }
-    /* Header */
     header {
       background: #004aad;
       padding: 18px 20px;
@@ -72,7 +70,6 @@
       background-color: #e07b00;
       box-shadow: 0 6px 18px rgba(224,123,0,0.85);
     }
-    /* Hero */
     .hero {
       text-align: center;
       margin-top: 70px;
@@ -114,10 +111,9 @@
       box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
       outline: none;
     }
-    /* Benefits */
     .benefits {
       text-align: center;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
       animation: fadeInUp 1.4s ease forwards;
       opacity: 0;
     }
@@ -134,6 +130,7 @@
       gap: 48px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 60px;
     }
     .benefits ul li {
       background: #ff8c00;
@@ -148,7 +145,46 @@
     .benefits ul li:hover {
       background: #e07b00;
     }
-    /* Footer */
+    .wiki-section {
+      background: #eaf1fb;
+      border-radius: 24px;
+      padding: 40px 30px;
+      max-width: 720px;
+      margin: 0 auto 100px auto;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.6s ease forwards;
+      opacity: 0;
+      text-align: center;
+    }
+    .wiki-section h2 {
+      color: #004aad;
+      font-weight: 700;
+      font-size: 2.7rem;
+      margin-bottom: 20px;
+    }
+    .wiki-section p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    .wiki-section a {
+      display: inline-block;
+      background: #ff8c00;
+      color: white;
+      padding: 14px 48px;
+      border-radius: 32px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 6px 20px rgba(255,140,0,0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .wiki-section a:hover,
+    .wiki-section a:focus {
+      background: #e07b00;
+      box-shadow: 0 8px 26px rgba(224,123,0,0.9);
+      outline: none;
+    }
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -159,7 +195,6 @@
       user-select: none;
       letter-spacing: 0.02em;
     }
-    /* Floating Discord Button */
     .discord-btn {
       position: fixed;
       bottom: 32px;
@@ -186,7 +221,6 @@
       height: 28px;
       fill: white;
     }
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -197,7 +231,6 @@
         transform: translateY(0);
       }
     }
-    /* Responsive */
     @media(max-width: 720px) {
       .hero h1 {
         font-size: 2.7rem;
@@ -212,6 +245,10 @@
         max-width: 280px;
         margin: 0 auto;
       }
+      .wiki-section {
+        padding: 28px 20px;
+        margin-bottom: 70px;
+      }
       header nav {
         gap: 20px;
         font-size: 1rem;
@@ -225,7 +262,7 @@
       <a href="index.html">Home</a>
       <a href="page1.html">Page 1</a>
       <a href="page2.html" aria-current="page">Page 2</a>
-      <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Get Support">Support</a>
+      <a href="https://empiresmpstore.craftingstore.net/" target="_blank" rel="noopener noreferrer" class="support-link" aria-label="Visit our Webstore">Webstore</a>
     </nav>
   </header>
 
@@ -237,13 +274,19 @@
     </section>
 
     <section class="benefits" aria-labelledby="benefits-title">
-      <h2 id="benefits-title">Highlights on Page 2</h2>
+      <h2 id="benefits-title">More Features</h2>
       <ul>
-        <li>New Features</li>
-        <li>Upcoming Events</li>
-        <li>Community Highlights</li>
-        <li>Exclusive Offers</li>
+        <li>Community Wiki</li>
+        <li>Detailed Guides</li>
+        <li>Events Calendar</li>
+        <li>Player Stats</li>
       </ul>
+    </section>
+
+    <section class="wiki-section" aria-labelledby="wiki-title">
+      <h2 id="wiki-title">EmpireSMP Wiki</h2>
+      <p>Discover our comprehensive community wiki where you can find guides, server rules, crafting recipes, and player tips to enhance your gameplay experience.</p>
+      <a href="https://empiresmpwiki.example.com" target="_blank" rel="noopener noreferrer" aria-label="Visit EmpireSMP Wiki">Visit the Wiki</a>
     </section>
   </div>
 
@@ -251,7 +294,7 @@
     &copy; 2025 EmpireSMP. All rights reserved.
   </footer>
 
-  <a href="https://discord.gg/yourdiscordinvite" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
+  <a href="https://discord.gg/CBatkn2Uau" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server" title="Join our Discord">
     <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
       <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
     </svg>
