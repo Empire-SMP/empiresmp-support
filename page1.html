@@ -4,48 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EmpireSMP - Page 1</title>
-  <!-- (Same CSS as index.html for brevity, add the full style here as above) -->
   <style>
-    /* Paste the exact same CSS here as in index.html */
-    /* ... */
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="page1.html" aria-current="page">Page 1</a>
-      <a href="page2.html">Page 2</a>
-      <a href="https://sites.google.com/view/empiresmplive/home?authuser=0" target="_blank" rel="noopener noreferrer" class="support-link">Support</a>
-    </nav>
-  </header>
-
-  <div class="container" role="main">
-    <section class="hero" aria-labelledby="page1-title">
-      <h1 id="page1-title">Welcome to Page 1</h1>
-      <p>This is some example content for Page 1. You can customize this section with whatever you want.</p>
-      <button class="btn" onclick="alert('Button on Page 1 clicked!')">Click Me</button>
-    </section>
-
-    <section class="benefits" aria-labelledby="benefits-title">
-      <h2 id="benefits-title">Page 1 Benefits</h2>
-      <ul>
-        <li>Benefit One</li>
-        <li>Benefit Two</li>
-        <li>Benefit Three</li>
-        <li>Benefit Four</li>
-      </ul>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 EmpireSMP. All rights reserved.
-  </footer>
-
-  <a href="https://discord.gg/yourdiscordinvite" target="_blank" rel="noopener noreferrer" class="discord-btn" aria-label="Join our Discord server">
-    <svg role="img" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <path d="M104.4 0c-9.7 0-17.6 7.8-17.6 17.6v17.6h-35.1C24.2 35.2 17.6 41.8 17.6 50.9v87.4c0 9.7 7.8 17.6 17.6 17.6h35.1v17.6c0 9.7 7.8 17.6 17.6 17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-17.6h35.1c9.7 0 17.6-7.8 17.6-17.6v-87.4c0-9.7-7.8-17.6-17.6-17.6h-35.1v-17.6c0-9.7-7.8-17.6-17.6-17.6h-35.1z"/>
-    </svg>
-  </a>
-</body>
-</html>
+    /* Same CSS as index.html (repeat exactly) */
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #1a1a1a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: #0078d7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #005ea2;
+      outline: none;
+    }
+    /* Container */
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    /* Header */
+    header {
+      background: #004aad;
+      padding: 18px 20px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header nav {
+      display: flex;
+      justify-content: center;
+      gap: 38px;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    header nav a {
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    header nav a:hover,
+    header nav a:focus {
+      background-color: rgba(255 255 255 / 0.2);
+      outline: none;
+    }
+    header nav a.support-link {
+      background: #ff8c00;
+      box-shadow: 0 4px 12px rgba(255,140,0,0.7);
+      font-weight: 700;
+      color: #fff;
+    }
+    header nav a.support-link:hover {
+      background-color: #e07b00;
+      box-shadow: 0 6px 18px rgba(224,123,0,0.85);
+    }
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-top: 70px;
+      margin-bottom: 70px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+    .hero h1 {
+      font-size: 3.6rem;
+      color: #004aad;
+      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      color: #444;
+      margin-bottom: 35px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .hero .btn {
+      background: #ff8c00;
+      color: white;
+      border: none;
+      padding: 20px 54px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 36px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 140, 0, 0.75);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero .btn:hover,
+    .hero .btn:focus {
+      background: #e07b00;
+      box-shadow: 0 8px 30px rgba(224, 123, 0, 0.9);
+      outline: none;
+    }
+    /* Benefits */
+    .benefits {
+      text-align: center;
+      margin-bottom: 100px;
+      animation: fadeInUp 1.4s ease forwards;
+      opacity: 0;
+    }
+    .benefits h2 {
+      font-size: 2.7rem;
+      color: #004aad;
+      margin-bottom: 32px;
+      font-weight: 700;
+    }
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+      display: inline-flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .benefits ul li {
+      background: #ff8c00;
+      color: white;
+      font-weight: 700;
+      padding: 20px 36px;
+      border-radius: 48px;
+      box-shadow: 0 8px 22px rgba(255,140,0,0.5);
+      transition: background-color 0.3s ease;
+      min-width: 190px;
+    }
+    .benefits ul li:hover {
+      background: #e07b00;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #111;
+      color: #bbb;
+      font-size: 0.9rem;
+      font-weight: 400;
+     
